@@ -1,0 +1,52 @@
+{
+    "name": "demo-bam-merge-sort-markdup",
+    "version": "1.12.1",
+    "description": "Merge multiple aligned BAMs, sort by coordinate and perform markduplicate",
+    "main": "bam-merge-sort-markdup.nf",
+    "scripts": {
+        "test": "pushd tests && ./run_tests.sh; popd"
+    },
+    "deprecated": false,
+    "keywords": [
+        "bioinformatics",
+        "alignment",
+        "markduplicate"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/icgc-argo/demo-wfpkgs.git"
+    },
+    "container": {
+        "registries": [
+            {
+                "registry": "quay.io",
+                "type": "docker",
+                "org": "icgc-argo",
+                "default": true
+            },
+            {
+                "registry": "ghcr.io",
+                "type": "docker",
+                "org": "icgc-argo",
+                "default": false
+            }
+        ]
+    },
+    "dependencies": [],
+    "devDependencies": [
+        "github.com/icgc-argo/demo-wfpkgs/demo-utils@1.2.0"
+    ],
+    "contributors": [
+        {
+            "name": "Junjun Zhang",
+            "email": "junjun.zhang@oicr.on.ca"
+        },
+        {
+            "name": "Linda Xiang",
+            "email": "linda.xiang@oicr.on.ca"
+        }
+    ],
+    "license": "AGPL-3.0",
+    "bugReport": "https://github.com/icgc-argo/demo-wfpkgs/issues",
+    "homepage": "https://github.com/icgc-argo/demo-wfpkgs#readme"
+}
