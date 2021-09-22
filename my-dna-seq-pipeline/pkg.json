@@ -1,6 +1,6 @@
 {
     "name": "my-dna-seq-pipeline",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "description": "FastQC workflow",
     "main": "main.nf",
     "deprecated": false,
