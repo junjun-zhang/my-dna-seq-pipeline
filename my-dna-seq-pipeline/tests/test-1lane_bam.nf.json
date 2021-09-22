@@ -1,0 +1,9 @@
+{
+    "lane_bams": "input/C0HVY.2.2db5a19d9d5fdb9f534f68046bb2e8fa.lane.bam",
+    "ref_genome_fa": "reference/tiny-grch38-chr11-530001-537000.fa",
+    "metadata": "input/0ae2c59b-2976-485c-a2c5-9b2976085cbf.fq.sequencing_experiment.song-analysis.json",
+    "tempdir": "/tmp",
+    "expected_output": "expected/expected.C0HVY.2.2db5a19d9d5fdb9f534f68046bb2e8fa.lane_fastqc.html.gz",
+    "container_registry": "ghcr.io",
+    "publish_dir": "outdir"
+}
