@@ -1,0 +1,40 @@
+{
+    "name": "demo-dna-seq-alignment-wf",
+    "version": "1.7.2",
+    "description": "DNA Seq Alignment Workflow",
+    "main": "main.nf",
+    "scripts": {
+        "test": "pushd tests && ./run_tests.sh; popd"
+    },
+    "deprecated": false,
+    "keywords": [
+        "bioinformatics",
+        "dna-seq",
+        "alignment",
+        "bwa",
+        "markduplicate"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/icgc-argo/demo-wfpkgs.git"
+    },
+    "dependencies": [
+        "github.com/icgc-argo/demo-wfpkgs/demo-bwa-mem-aligner@1.22.0",
+        "github.com/icgc-argo/demo-wfpkgs/demo-bam-merge-sort-markdup@1.12.1",
+        "github.com/icgc-argo/demo-wfpkgs/demo-utils@1.2.0"
+    ],
+    "devDependencies": [],
+    "contributors": [
+        {
+            "name": "Junjun Zhang",
+            "email": "junjun.zhang@oicr.on.ca"
+        },
+        {
+            "name": "Linda Xiang",
+            "email": "linda.xiang@oicr.on.ca"
+        }
+    ],
+    "license": "AGPL-3.0",
+    "bugReport": "https://github.com/icgc-argo/demo-wfpkgs/issues",
+    "homepage": "https://github.com/icgc-argo/demo-wfpkgs#readme"
+}
