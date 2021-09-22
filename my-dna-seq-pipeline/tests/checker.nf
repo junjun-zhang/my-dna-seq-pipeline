@@ -31,16 +31,21 @@
 */
 
 nextflow.enable.dsl = 2
-version = '0.1.0'  // package version
+version = '0.2.0'
 
 // universal params
-params.publish_dir = ""
+params.publish_dir = "outdir"
 params.container = ""
-params.container_registry = ""
+params.container_registry = "ghcr.io"
 params.container_version = ""
 
 // tool specific parmas go here, add / change as needed
-params.input_file = ""
+params.lane_bams = "input/?????_?.lane.bam"
+params.aligned_lane_prefix = 'grch38-aligned'
+params.ref_genome_fa = "reference/tiny-grch38-chr11-530001-537000.fa.gz"
+params.metadata = "NO_FILE"
+params.tempdir = "NO_DIR"
+
 params.expected_output = ""
 params.cleanup = false
 
@@ -77,16 +82,22 @@ process file_smart_diff {
 
 workflow checker {
   take:
-    input_file
+    ref_genome_fa
+    metadata
+    lane_bams
+    tempdir
     expected_output
 
   main:
     MyDnaSeqPipeline(
-      input_file
+      ref_genome_fa,
+      metadata,
+      lane_bams,
+      tempdir
     )
 
     file_smart_diff(
-      MyDnaSeqPipeline.out.output_file,
+      MyDnaSeqPipeline.out.fastqc_output,
       expected_output
     )
 }
@@ -94,7 +105,10 @@ workflow checker {
 
 workflow {
   checker(
-    file(params.input_file),
+    params.ref_genome_fa,
+    params.metadata,
+    params.lane_bams,
+    params.tempdir,
     file(params.expected_output)
   )
 }
